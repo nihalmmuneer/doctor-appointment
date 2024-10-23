@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div className="flex items-center justify-between shadow-sm p-4">
       <div className="flex items-center gap-10">
-        <Image src="./logo.svg" alt="logo" width={180} height={80} />
+        <Image src="/book-doc.png" alt="logo" width={180} height={80} />
         <ul className="md:flex gap-8 hidden">
           {Menu.map((item, index) => (
             <>
