@@ -33,25 +33,29 @@ const CategorySearch = () => {
         </Button>
       </div>
       <div className="grid grid-cols-3 md:grid-cols-6">
-        {categoryList.map(
-          (category, index) =>
-            index < 6 && (
-              <div
-                key={index}
-                className=" mt-5 flex flex-col rounded-lg items-center gap-2 p-5 bg-blue-50 m-2 cursor-pointer hover:scale-110 transition-all ease-in-out"
-              >
-                <Image
-                  src={category?.Icon[0]?.url}
-                  alt={category?.Name}
-                  width={40}
-                  height={40}
-                />
-                <label className="whitespace-nowrap text-sm text-blue-600">
-                  {category?.Name}
-                </label>
-              </div>
+        {categoryList.length > 0
+          ? categoryList.map(
+              (category, index) =>
+                index < 6 && (
+                  <div
+                    key={index}
+                    className=" mt-5 flex flex-col rounded-lg items-center gap-2 p-5 bg-blue-50 m-2 cursor-pointer hover:scale-110 transition-all ease-in-out"
+                  >
+                    <Image
+                      src={category?.Icon[0]?.url}
+                      alt={category?.Name}
+                      width={40}
+                      height={40}
+                    />
+                    <label className="whitespace-nowrap text-sm text-blue-600">
+                      {category?.Name}
+                    </label>
+                  </div>
+                )
             )
-        )}
+          : [1, 2, 3, 4, 5, 6].map((category, index) => (
+              <div className="h-[105px] w-[135px]  mt-5 m-2 p-5 flex flex-row  animate-pulse rounded-lg bg-slate-200"></div>
+            ))}
       </div>
     </div>
   );
